@@ -4,8 +4,10 @@ import org.springframework.stereotype.Service;
 import pro.sky.coursework2.exception.QuestionAlreadyExistsException;
 import pro.sky.coursework2.exception.QuestionNotFoundException;
 import pro.sky.coursework2.exception.QuestionsAreEmptyException;
+
 import pro.sky.coursework2.model.Question;
 import pro.sky.coursework2.service.QuestionService;
+
 
 import java.util.*;
 
@@ -23,16 +25,15 @@ public class JavaQuestionService implements QuestionService {
     }
 
     @Override
-    public Question add(String question) {
+    public Question add(Question question) {
         if (!questions.add(question)) {
-
             throw new QuestionAlreadyExistsException();
         }
         return question;
     }
 
     @Override
-    public Question remove(String question) {
+    public Question remove(Question question) {
         if (!questions.remove(question)) {
             throw new QuestionNotFoundException();
         }

@@ -26,11 +26,11 @@ public class JavaQuestionController {
 
     @GetMapping("/remove")
     public Question removeQuestion(@RequestParam String question, @RequestParam String answer) {
-        return questionService.remove(String.valueOf(new Question(question, answer)));
+        return questionService.remove(new Question(question, answer));
     }
 
-    @GetMapping("/add")
-    public Collection<Question> getQuestions(@RequestParam String question, @RequestParam String answer) {
+    @GetMapping
+    public Collection<Question> getQuestions() {
         return questionService.getAll();
     }
 }

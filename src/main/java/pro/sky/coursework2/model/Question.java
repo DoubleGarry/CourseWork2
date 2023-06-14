@@ -32,10 +32,15 @@ public class Question {
                 && Objects.equals(answer, question1.answer);
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(question, answer);
-//    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(question, answer);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Вопрос: %s, ответ: %s", question, answer);
+    }
 
 //    @Override
 //    public String toString() {
@@ -44,8 +49,4 @@ public class Question {
 //                ", answer='" + answer + '\'' +
 //                '}';
 //    }
-       @Override
-  public String toString() {
-        return String.format("Вопрос: %s, ответ: %s", question, answer);
-    }
 }
